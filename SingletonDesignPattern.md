@@ -1,6 +1,6 @@
 # Singleton Design Pattern
 
-## Definition
+# 1. Definition
 
 Singleton is a **Creational Design Pattern** that ensures:
 
@@ -9,7 +9,7 @@ Singleton is a **Creational Design Pattern** that ensures:
 
 ---
 
-# Why Do We Need Singleton?
+# 2. Why Do We Need Singleton?
 
 Some resources should be shared across the entire application rather than creating multiple objects.
 
@@ -31,7 +31,7 @@ If every class creates its own instance, it may lead to:
 
 ---
 
-# Core Idea
+# 3. Core Idea
 
 A Singleton class:
 
@@ -41,7 +41,7 @@ A Singleton class:
 
 ---
 
-# Why is Constructor Private?
+# 4. Why is Constructor Private?
 
 ```java
 public class Singleton {
@@ -65,7 +65,7 @@ Making the constructor private prevents object creation from outside the class.
 
 ---
 
-# Why is Instance Variable Static?
+# 5. Why is Instance Variable Static?
 
 ```java
 private static Singleton instance;
@@ -85,7 +85,7 @@ Since the Singleton instance must exist independently of any object, it must be 
 
 ---
 
-# Why is getInstance() Static?
+# 6. Why is getInstance() Static?
 
 ```java
 public static Singleton getInstance()
@@ -113,7 +113,7 @@ Singleton s = Singleton.getInstance();
 
 ---
 
-# Eager Initialization Singleton
+# 7. Eager Initialization Singleton
 
 Instance is created when the class loads.
 
@@ -142,7 +142,7 @@ public final class Singleton {
 
 ---
 
-# Lazy Initialization Singleton
+# 8. Lazy Initialization Singleton
 
 Object is created only when needed.
 
@@ -174,7 +174,7 @@ public class Singleton {
 
 ---
 
-# Problem in Multi-threaded Environment
+# 9. Problem in Multi-threaded Environment
 
 Consider:
 
@@ -232,7 +232,7 @@ Singleton guarantee is broken.
 
 ---
 
-# Solution 1: Synchronized Method
+# 10. Solution 1: Synchronized Method
 
 ```java
 public static synchronized Singleton getInstance() {
@@ -257,7 +257,7 @@ Only one object is created.
 
 ---
 
-# Why is synchronized Slow?
+# 11. Why is synchronized Slow?
 
 Consider:
 
@@ -283,7 +283,7 @@ The application remains correct but may lose performance under heavy concurrency
 
 ---
 
-# Understanding synchronized Block
+# 12. Understanding synchronized Block
 
 ### Syntax
 
@@ -311,7 +311,7 @@ Only one thread can hold the key and enter at a time.
 
 ---
 
-# Solution 2: Double Checked Locking
+# 13. Solution 2: Double Checked Locking
 
 ```java
 public class Singleton {
@@ -341,7 +341,7 @@ public class Singleton {
 
 ---
 
-# Why Check Twice?
+# 14. Why Check Twice?
 
 ### First Check
 
@@ -363,7 +363,7 @@ This combination is called **Double Checked Locking**.
 
 ---
 
-# Why volatile is Required?
+# 15. Why volatile is Required?
 
 ```java
 private static volatile Singleton instance;
@@ -379,7 +379,7 @@ Without `volatile`, another thread may see a partially constructed object.
 
 ---
 
-# Modern Best Practice: Enum Singleton
+# 16. Modern Best Practice: Enum Singleton
 
 ```java
 public enum Singleton {
@@ -406,7 +406,7 @@ This is generally considered the safest Singleton implementation in Java.
 
 ---
 
-# Advantages of Singleton
+# 17. Advantages of Singleton
 
 * Controlled access to a single instance
 * Saves memory
@@ -416,7 +416,7 @@ This is generally considered the safest Singleton implementation in Java.
 
 ---
 
-# Disadvantages of Singleton
+# 18. Disadvantages of Singleton
 
 * Global state can make testing difficult
 * Hidden dependencies
@@ -426,7 +426,7 @@ This is generally considered the safest Singleton implementation in Java.
 
 ---
 
-# Real-World Use Cases
+# 19. Real-World Use Cases
 
 ## Logger
 
@@ -482,7 +482,7 @@ Single source of truth for feature toggles.
 
 ---
 
-# Interview Summary
+# 20. Interview Summary
 
 Singleton ensures:
 
