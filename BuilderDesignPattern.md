@@ -1,4 +1,4 @@
-# Builder Design Pattern - Complete Revision Notes
+# Builder Design Pattern
 
 # 1. Definition
 
